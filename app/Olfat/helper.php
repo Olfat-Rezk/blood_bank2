@@ -1,5 +1,12 @@
 <?php
- function responseJson($status,$message,$data=null){
+
+/**
+ * @param $status
+ * @param $message
+ * @param null $data
+ * @return \Illuminate\Http\JsonResponse
+ */
+function responseJson($status, $message, $data=null){
     $response = [
         'status'=>$status,
         'message'=>$message,

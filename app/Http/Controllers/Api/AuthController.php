@@ -26,7 +26,7 @@ class AuthController extends Controller
             return responseJson(0,$validator->errors()->first(),$validator->errors());
 
         }
-        $request->merge('password'->bcrypt($request->password));
+        $request->merge(['password' => bcrypt($request->password)]);
 
      $client = Client::creating($request->all());
      $client->api_token = str_random(60);
